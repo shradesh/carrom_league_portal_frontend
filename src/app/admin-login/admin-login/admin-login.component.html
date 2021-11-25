@@ -1,0 +1,39 @@
+<p>admin-login works!</p>
+<!-- <div class="container">
+    <form [formGroup]="adminLoginForm" (ngSubmit)="onSubmit()" class=" card offset-md-4 col-md-4 p-0">
+        <div class="card-header">
+            <h2 class="text-center">Login</h2>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <Label for="Email">Email</Label>
+                        <input type="email" class="form-control" id="email" placeholder="Email" [formControl]='email'
+                            required>
+                        <div *ngIf="email.invalid && email.touched" class="alert">
+                            Email is required
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <Label for="password">Password</Label>
+                        <input type="password" class="form-control" id="pass" placeholder="Password"
+                            [formControl]='password' required>
+                        <div *ngIf="password.invalid && password.touched" class="alert">
+                            Password is required
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">Submit</button>
+        </div>
+        <!-- <div class="alert-danger text-center" *ngIf="errorMsg">{{errorMsg}} </div>
+        <div class="alert-success text-center" *ngIf="successMsg">{{successMsg}}</div> -->
+    <!-- </form>
+</div> --> 
