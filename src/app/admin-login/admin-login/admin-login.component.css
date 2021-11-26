@@ -1,0 +1,27 @@
+.card-header{
+    background-color: unset !important;
+   
+}
+.card-footer{
+    background-color: unset !important;
+}
+.alert{
+    color:#ff7f50;
+}
+.container{
+    background: linear-gradient(110deg, #3bc6fd 25%, #d54bff 50%);
+ height:91vh;
+ max-width:200%; 
+ 
+ /* background-repeat:no-repeat; */
+ /* background-size: auto; */
+} 
+.container .card {
+    top:110px;
+    border-radius:5%;
+    color:rgb(47, 235, 41);
+   
+}
+.btn{
+    margin-left:230px;
+}

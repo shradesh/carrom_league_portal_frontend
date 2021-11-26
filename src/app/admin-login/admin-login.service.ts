@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class AdminLoginService {
 
   constructor( private http: HttpClient) { }
-  getData(){
-    
+  adminLoginForm(url:string){
+    return this.http.get(url)
   }
 }

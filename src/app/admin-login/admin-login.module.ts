@@ -15,7 +15,6 @@ import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
     AdminLoginRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    FormControl
   ]
 })
 export class AdminLoginModule { }
