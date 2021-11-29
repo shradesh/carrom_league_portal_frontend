@@ -1,0 +1,71 @@
+<div class="modal fade" id="exampleModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>{{isEdit ? 'Edit' : 'Add'}} Player</h3>
+                <button type="button" #closeModal 
+                class="close" data-dismiss="modal" aria-label="close"
+                    (click)="clearForm()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="playerFormGroup">
+                    <div class="row">
+                        <div class="form-group col">
+                            <label for="firstName">First Name</label>
+                            <input type="text" class="form-control" [formControl]="firstName" placeholder="Name"
+                                required>
+                            <div *ngIf='firstName.invalid && firstName.touched' class='alert'>
+                                First Name is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="form-group col">
+                            <label class="control-label" for="lastName">Last Name</label>
+                            <input type="text" class="form-control" [formControl]="lastName" placeholder="Last Name"
+                                required>
+                            <div *ngIf='lastName.invalid && lastName.touched' class='alert'>
+                                Last Name is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="form-group col">
+                            <label class="control-label" for="sudoName">Sudo Name</label>
+                            <input type="text" class="form-control" [formControl]="sudoName" placeholder="Sudo"
+                                required>
+                            <div *ngIf='sudoName.invalid && sudoName.touched' class='alert'>
+                                Sudo Name is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="form-group col">
+                            <label class="control-label" for="expert-level">Expert Level</label>
+                            <!-- <input type="text" class="form-control" [formControl]="expertLevel" placeholder="Expert"
+                                required> -->
+                            <select class="form-control" [formControl]="expertLevel" placeholder="Expert" required>
+                                <option value="1">Beginner</option>
+                                <option value="2">Intermediate</option>
+                                <option value="3">Expert</option>
+                            </select>
+                            <div *ngIf='expertLevel.invalid && expertLevel.touched' class='alert'>
+                                Expert Level is required.
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary"
+                    (click)="clearForm()">
+                    Cancel
+                </button>
+                <button type="button" class="btn btn-primary"
+                    [disabled]="playerFormGroup.invalid" (click)="submitForm()">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

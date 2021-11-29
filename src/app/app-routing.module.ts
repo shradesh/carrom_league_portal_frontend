@@ -4,7 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-
     path: 'admin-login',
     loadChildren: () => import('./admin-login/admin-login.module').then(m => m.AdminLoginModule)
   },

@@ -1,5 +1,30 @@
 .btn{
-    margin-left: auto;
-    width:10%;
+   
+    width:25%;
     height: 15%;
+    font-family: Roboto;
+    font-size: 17px;
+}
+.menu {
+    font-family: Roboto-bold;
+    font-size: 17px;
+    font-weight:800px;
+}
+.navigation {
+   background-color:#e3d10061 ; 
+}
+.container {
+    font-size: 20px;
+}
+.menu-bar{
+    margin-left: 45%;
+}
+.navigate{
+    column-gap: 9px;
+}
+.btn-login:hover {
+    background-color: tomato;
+}
+.nav-link.active {
+    border-bottom: 1px solid rgba(0,0,0,.7);
 }

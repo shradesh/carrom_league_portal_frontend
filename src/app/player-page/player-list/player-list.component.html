@@ -1,0 +1,41 @@
+<!-- <p>player-list works!</p> -->
+<div class="container-wrap">
+    <div class="player-list">
+        <h3>Player list</h3>
+        <button class="btn btn-outline-primary" type="button" 
+        #openModal
+        data-toggle="modal" data-target="#exampleModal"
+        (click)="setIsEdit()">
+            <fa-icon [icon]="faPlus"></fa-icon>
+        </button>
+    </div>
+    <!-- <div class="table-wrapper-scroll-y my-custom-scrollbar"> -->
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Sudo Name</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Expert level</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let player of playerTable">
+                <td>{{player.sudo_name}}</td>
+                <td>{{player.first_name | titlecase}}</td>
+                <td> {{player.last_name | titlecase }}</td>
+                <td> {{expertLevelArray[player.expert_level]}}</td>
+                <td>
+                    <button class="icon-button" (click)="editPlayer(player.id)" type="button">
+                        <fa-icon [icon]="faEdit"></fa-icon>
+                    </button>
+                    <button class="icon-button" (click)="removePlayer(player.id)" type="button">
+                        <fa-icon [icon]="faTrash"></fa-icon>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+        <!-- </div> -->
+        <!-- </div> -->
+        <app-modal-form (saveEvent)="save($event)"></app-modal-form>

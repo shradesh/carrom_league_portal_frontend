@@ -1,21 +1,22 @@
- <!-- <p>point-table</p>  -->
-<table class="table table-bordered">
+<!-- <p>point-table</p>  -->
+<h3> Point Table </h3>
+<table class="player table table-bordered">
     <thead>
         <tr>
             <th>Player</th>
             <th>Played</th>
-            <th>win</th>
+            <th>Win</th>
             <th>Loss</th>
             <th>Points</th>
-            </tr>
-            <tr>
-            <td>Player1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            </tr>
-
-    
-        </thead>
-        </table>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let point of pointTable'>
+            <td>{{point.player.sudo_name}}</td>
+            <td>{{point.matches_count}}</td>
+            <td>{{point.win_count}}</td>
+            <td>{{point.lose_count}}</td>
+            <td>{{point.point}}</td>
+        </tr>
+    </tbody>
+</table>

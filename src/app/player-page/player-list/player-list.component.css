@@ -1,0 +1,29 @@
+h3 {
+    font-family:Roboto-bold;
+    font-size: 25px;
+    text-align: center;
+}
+.player-list {
+    display:flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+}
+.btn {
+    border-radius: 50%;
+}
+thead {
+    font-family: Roboto-slab;
+    font-size: 17px;
+    font-weight: 700;
+}
+tbody {
+    font-family: Roboto-slab;
+    font-size: 15px;
+}
+/* .btn-player {
+    border: 0;
+    background: none;
+}
+.btn-player:focus {
+    outline: none;
+} */

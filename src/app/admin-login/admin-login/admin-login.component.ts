@@ -36,7 +36,7 @@ export class AdminLoginComponent implements OnInit {
      //api url
      let url=""
      console.log(url)
-    
+
      this.adminService.adminLoginForm(url)
      .subscribe(
        (response) =>{

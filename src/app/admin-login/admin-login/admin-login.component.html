@@ -1,10 +1,10 @@
 <!-- <p>admin-login works!</p> -->
- <div class="container">
-     
-    <form [formGroup]="adminLoginForm" (ngSubmit)="onSubmit()" class=" card offset-md-4 col-md-4 p-0">
+<div class="container">
+
+    <form [formGroup]="adminLoginForm" (ngSubmit)="onSubmit()" class=" card offset-md-4 col-md-3 p-0">
         <div class="card-header">
             <!-- <h2 class="text-center">Login</h2> -->
-            <img src="lotus.jpg">
+            <img src="assets\lotus.png" alt="Card image" class="center">
         </div>
         <div class="card-body">
             <div class="row">
@@ -32,11 +32,11 @@
                 </div>
             </div>
         </div>
-        <div class="card-footer">
-            <button type="submit" [disabled]="adminLoginForm.invalid" class="btn btn-primary">Submit</button>
-        </div>
-         <div class="alert-danger text-center" *ngIf="errorMsg">{{errorMsg}} </div>
-        <div class="alert-success text-center" *ngIf="successMsg">{{successMsg}}</div> 
-     </form>
-</div>  
+        <!-- <div class="card-footer"> -->
+        <button type="submit" [disabled]="adminLoginForm.invalid" class="btn btn-primary submit-btn">Submit</button>
+        <!-- </div> -->
+        <div class="alert-danger text-center" *ngIf="errorMsg">{{errorMsg}} </div>
+        <div class="alert-success text-center" *ngIf="successMsg">{{successMsg}}</div>
+    </form>
+</div>
 <router-outlet></router-outlet>

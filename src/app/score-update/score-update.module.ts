@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ScoreUpdateRoutingModule } from './score-update-routing.module';
 import { ScoreUpdateComponent } from './score-update/score-update.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { ScoreUpdateComponent } from './score-update/score-update.component';
   ],
   imports: [
     CommonModule,
-    ScoreUpdateRoutingModule
+    ScoreUpdateRoutingModule,
+    FontAwesomeModule
   ]
 })
 export class ScoreUpdateModule { }

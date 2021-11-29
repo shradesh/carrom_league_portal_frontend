@@ -1,0 +1,14 @@
+/* h3{
+    font-family: Roboto-bold;
+} */
+.alert {
+    color:#b22222;
+    margin-bottom: 0;
+    padding: 0;
+    font-size: 15px;
+    font-family: Roboto-slab;
+}
+.modal{
+    font-family: Roboto-slab;
+    font-size: 15px;
+}

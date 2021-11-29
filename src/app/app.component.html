@@ -8,30 +8,35 @@
 <a routerLink="/scheduler">Scheduler</a> -->
 <!-- <a routerLink="/admin-login">Login</a>  -->
 <!-- <a routerLink="/score-update">Score</a> -->
-
-<nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-      <a class="navbar-brand" routerLink="/dashboard">Dashboard</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<!-- <a routerLink="/player-page"></a> -->
+<nav class="navigation navbar navbar-expand-lg navbar-light">
+  <div class="container">
+    <img src="assets\lotus.png" alt="Card image">
+    <div class="menu-bar container-fluid">
+      <!-- <a class="navbar-brand" routerLink="/dashboard">Dashboard</a> -->
+      <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
+      </button> -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="/point-table">Point-Table</a>
+        <ul class="navigate navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="menu nav-item">
+            <a class="nav-link" [class.active]="currentPage === 'dashboard'" aria-current="page" routerLink="/dashboard">Dashboard</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/scheduler">Scheduler</a>
+          <li class="menu nav-item">
+            <a class="nav-link" [class.active]="currentPage === 'point-table'" aria-current="page" routerLink="/point-table">Point Table</a>
+          </li>
+          <li class="menu nav-item">
+            <a class="nav-link" [class.active]="currentPage === 'scheduler'" aria-current="page" routerLink="/scheduler">Scheduler</a>
           </li>
         </ul>
         <!-- <form class="d-flex"> -->
-          <button class="btn btn-outline-primary" type="submit" routerLink="/admin-login">Login</button>
+          <button class="btn btn-login" type="submit" 
+          routerLink="/admin-login">Login</button>
         <!-- </form> -->
       </div>
     </div>
-  </nav>
-
-<div class="Content">
-
+  </div>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
 </div>
-<router-outlet></router-outlet>

@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+thead {
+    margin: 20px 0px;  
+    font-family: Roboto;
+    font-size:17px;
+    font-weight: 700;
+}
+h3 {
+    font-family: Roboto;
+    font-size: 20px;
+    margin:20px 0;
+}
+tbody {
+    font-family: Roboto;
+    font-size:17px;
+}
+.icon-button {
+    border: 0px;
+    background: none;
+}
+.icon-button:focus {
+    outline: none;
+}
