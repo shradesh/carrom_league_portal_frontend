@@ -3,8 +3,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h3>{{isEdit ? 'Edit' : 'Add'}} Player</h3>
-                <button type="button" #closeModal 
-                class="close" data-dismiss="modal" aria-label="close"
+                <button type="button" #closeModal class="close" data-dismiss="modal" aria-label="close"
                     (click)="clearForm()">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -14,7 +13,8 @@
                     <div class="row">
                         <div class="form-group col">
                             <label for="firstName">First Name</label>
-                            <input type="text" class="form-control" [formControl]="firstName" placeholder="Name"
+                            <input type="text" class="form-control" 
+                            [formControl]="firstName" placeholder="Name"
                                 required>
                             <div *ngIf='firstName.invalid && firstName.touched' class='alert'>
                                 First Name is required.
@@ -24,7 +24,8 @@
                     <div class="row mt-2">
                         <div class="form-group col">
                             <label class="control-label" for="lastName">Last Name</label>
-                            <input type="text" class="form-control" [formControl]="lastName" placeholder="Last Name"
+                            <input type="text" class="form-control" 
+                            [formControl]="lastName" placeholder="Last Name"
                                 required>
                             <div *ngIf='lastName.invalid && lastName.touched' class='alert'>
                                 Last Name is required.
@@ -59,12 +60,12 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary"
-                    (click)="clearForm()">
+                <button type="button" class="btn btn-secondary" (click)="clearForm()">
                     Cancel
                 </button>
-                <button type="button" class="btn btn-primary"
-                    [disabled]="playerFormGroup.invalid" (click)="submitForm()">Save</button>
+                <button type="button" class="btn btn-primary" [disabled]="playerFormGroup.invalid"
+                data-dismiss="modal" aria-label="close"
+                    (click)="submitForm()">Save</button>
             </div>
         </div>
     </div>

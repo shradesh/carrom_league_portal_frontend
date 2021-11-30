@@ -9,5 +9,13 @@
             <th>Result</th>
         </tr>
     </thead>
-    
+    <tbody>
+        <tr *ngFor ="let schedule of schedulerTable">
+            <td>{{schedule.player_one.sudo_name}}</td>
+            <td>{{schedule.player_two.sudo_name}}</td>
+            <td>{{schedule.match_date | date}}</td>
+            <td>{{schedule.winner_player?.sudo_name}}</td>
+        </tr>
+    </tbody>
+
 </table>

@@ -28,11 +28,11 @@ export class PlayerPageService {
     return this.http.get(url)
   }
   playerUpdate(id: number, data: any) {
-    let url = `${this.apiURL}/player/${id}`;
-    return this.http.put(url, data, {headers: this.httpHeaders})
+    let url = `${this.apiURL}/player/${id}/`;
+    return this.http.put(url, data)
   }
   playerDelete(id: number) {
-    let url = `${this.apiURL}/player/${id}`;
+    let url = `${this.apiURL}/player/${id}/`;
     return this.http.delete(url)
   }
 }

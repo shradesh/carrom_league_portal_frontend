@@ -7,6 +7,13 @@
             <th>Player 2</th>
             <th> Date</th>
         </thead>
+    <tbody>
+        <tr *ngFor= "let schedule of schedulerTable">
+            <td>{{schedule.player_one.sudo_name}}</td>
+            <td>{{schedule.player_two.sudo_name}}</td>
+            <td>{{schedule.match_date | date}}</td>
+        </tr>
+    </tbody>
     </table>
 </div>
 <div class="container-wrap">

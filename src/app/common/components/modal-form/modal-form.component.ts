@@ -52,7 +52,8 @@ export class ModalFormComponent implements OnInit {
       )
   }
   submitForm() {
-    this.closeModalRef.nativeElement.click();
+    // this.closeModalRef.nativeElement.click();
+    console.log(this.playerFormGroup, this.firstName)
     this.saveEvent.emit(this.playerFormGroup.value);
     if (this.isEdit) {
       this.commonService.setPlayerData(null)

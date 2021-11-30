@@ -1,5 +1,5 @@
 <!-- <p>score-update works!</p> -->
-<h3>Scheduled</h3>
+<h3>Score Update</h3>
 <table class="table table-stripped">
     <thead>
         <tr>
@@ -10,15 +10,20 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+        <tr *ngFor="let score of schedulerTable">
+            <td>{{score.player_one.sudo_name}}</td>
+            <td>{{score.player_two.sudo_name}}</td>
+            <td>{{score.match_date | date}}</td>
             <td>
-                <button class="icon-button" type="button">
+                <button class="icon-button" type="button"
+                #openModal
+                data-toggle="modal" data-target="#exampleModal"
+                (click)="setScore(score)"
+                [disabled]="score.winner_player">
                     <fa-icon [icon]="faEdit"></fa-icon>
                 </button>
             </td>
         </tr>
     </tbody>
 </table>
+<app-form-score (saveEvent)="outputData($event)"></app-form-score>

@@ -27,6 +27,7 @@ export class PlayerListComponent implements OnInit {
   ngOnInit(): void {
     this.getPlayer()
   }
+  
   getPlayer() {
     this.playerPageService.playerListGet()
       .subscribe(
@@ -64,6 +65,7 @@ export class PlayerListComponent implements OnInit {
         .subscribe(
           (response: any) => {
             console.log('sucessful', response.code)
+            response.code === 'success' && this.getPlayer()
           },
           (err) => {
             console.log(err)
@@ -72,8 +74,9 @@ export class PlayerListComponent implements OnInit {
     } else {
       this.playerPageService.playerUpdate(this.playerID, formData)
         .subscribe(
-          response => {
+          (response: any) => {
             console.log('success', response)
+            response.code === 'success' && this.getPlayer()
           },
           error => {
             console.log(error)
@@ -98,6 +101,7 @@ export class PlayerListComponent implements OnInit {
     .subscribe(
       (response:any) =>{
         console.log('sucsess',response)
+        response.code === 'success' && this.getPlayer()
       },
       (error) =>{
         console.log(error)

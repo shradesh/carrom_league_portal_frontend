@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { count } from 'rxjs/operators';
 import { CommonService } from 'src/app/common/common.service';
 import { PointTableService } from 'src/app/point-table/point-table.service';
+import { SchedulerService } from 'src/app/scheduler/scheduler.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,14 +11,18 @@ import { PointTableService } from 'src/app/point-table/point-table.service';
 })
 export class DashboardComponent implements OnInit {
   pointTable: Array<any> = []
+  schedulerTable: Array<any> = []
   constructor(
     private commonService: CommonService,
-    private pointTableService: PointTableService
+    private pointTableService: PointTableService,
+    private schedulerService: SchedulerService
   ) { }
 
   ngOnInit(): void {
     this.commonService.setCurrentPage('dashboard')
     this.fetchPointTable()
+    this.fetchAllMatches(5)
+  
   }
 
   fetchPointTable() {
@@ -38,8 +44,22 @@ export class DashboardComponent implements OnInit {
       }
     )
   }
-  ngOnDestroy(){
-
-  }
-
+  fetchAllMatches(count:number){
+    this.schedulerService.getAllMatchesByCount(count) 
+      .subscribe(
+        (response:any) => {
+          console.log('success', response)
+          if(response.code === 'success') {
+            this.schedulerTable = response.data
+            console.log(this.schedulerTable)
+          }
+          else{
+            this.schedulerTable=[]
+          }
+        },
+        (error)=>{
+          console.log(error)
+        }
+      )
+    }
 }

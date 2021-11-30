@@ -6,11 +6,14 @@ import { Observable, Subject } from "rxjs";
 })
 
 export class CommonService {
+    
     currentURL = new Subject()
     playerData = new Subject()
+    scoreData = new Subject()
 
     $currentURL: Observable<any> = this.currentURL.asObservable()
     $playerData: Observable<any> = this.playerData.asObservable()
+    $scoreData: Observable<any> = this.scoreData.asObservable()
     constructor() {
 
     }
@@ -21,5 +24,8 @@ export class CommonService {
 
     setPlayerData(data: any) {
         this.playerData.next(data)
+    }
+    setScoreData(data:any) {
+        this.scoreData.next(data)
     }
 }
